@@ -1,0 +1,13 @@
+{% extends 'boards/base.html' %}
+
+{% block contenido %}
+<div class="row">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Enviar">
+    </form>
+</div>
+{% endblock contenido %}
+{% block prueba %}
+{% endblock prueba %}

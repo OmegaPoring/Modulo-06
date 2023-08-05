@@ -1,0 +1,38 @@
+{% extends 'vehiculo/base.html' %}
+
+{% block contenido %}
+<div class="container text-center py-5">
+    <h1>Listado de Vehículos</h1>
+    
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Marca</th>
+            <th scope="col">Modelo</th>
+            <th scope="col">Serial Carrocería</th>
+            <th scope="col">Serial Motor</th>
+            <th scope="col">Categoría</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Condición de Precio</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for item in datos_vehiculo %}
+            <tr>
+                <td>{{ item.marca }}</td>
+                <td>{{ item.modelo }}</td>
+                <td>{{ item.serial_carroceria }}</td>
+                <td>{{ item.serial_motor }}</td>
+                <td>{{ item.categoria }}</td>
+                <td>{{ item.precio }}</td>
+                {% if item.precio >= 0 and item.precio <= 10000  %}<td>Bajo</td>
+                {% elif item.precio >= 10001 and item.precio <= 30000  %}<td>Medio</td>
+                {% elif item.precio > 30000 %}<td>Alto</td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+
+</div>
+{% endblock contenido %}

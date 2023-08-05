@@ -1,0 +1,13 @@
+{% extends 'vehiculo/base.html' %}
+
+{% block contenido %} {% load crispy_forms_tags %}
+<div class="container py-5">
+    <h1>Registro</h1>
+    <form method="post">
+        {% csrf_token %} {{ register_form|crispy }}
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+    <p class="text-center">Si tienes actualmente una cuenta, inicie su sesion en <a href="/login">login</a></p>
+</div>
+{% endblock contenido %}
+{% block prueba %}{% endblock prueba %}

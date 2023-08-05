@@ -1,0 +1,26 @@
+{% extends 'boards/base.html' %}
+{% load static %}
+    {% block contenido %}
+    <div class="card" style="width: 18rem;">
+    <img src={% static '/img/loading.jpg' %} class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="{% url 'Index_class' %}" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+    <h1>Bienvenido {{nombre}}</h1>
+    <h1>La fecha actual es: {{fecha}}</h1>
+    {% endblock contenido %}
+    {% block prueba %}
+    <div class="row">
+        <div class="text-primary"><h1>El numero aleatorio es: {{aleatorio}}</h1></div>
+        <div class="text-warning">
+            Se sobreescribe prueba
+        </div>
+        <h2>Mis Frutas</h2>
+        <ol>
+        {% for fruta in frutas %}<li>{{fruta}}</li>{% endfor %}
+        </ol>
+    </div>
+    {% endblock prueba %}

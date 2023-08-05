@@ -1,0 +1,10 @@
+{% extends 'boards/base.html' %}
+{% block contenido %}
+    <form action="/getname/" method="post">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value="submit">
+    </form>
+{% endblock contenido %}
+{% block prueba %}
+{% endblock prueba %}

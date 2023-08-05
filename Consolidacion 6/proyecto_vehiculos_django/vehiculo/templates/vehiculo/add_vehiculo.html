@@ -1,0 +1,13 @@
+{% extends 'vehiculo/base.html' %}
+
+{% block contenido %}
+
+<div class="container text-center py-5">
+    <h1>Agregar un vehículo</h1>
+    <form action="/vehiculo/add/" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Agregar">
+    </form>
+</div>
+{% endblock contenido %}
